@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nearby Rescue Requests</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8'
+            }
+          }
+        }
+      }
+    };
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 flex justify-center min-h-screen">
+<!-- Mobile iOS Frame Wrapper -->
+<div class="w-full max-w-md bg-[#f6f9fc] flex flex-col min-h-screen shadow-2xl relative select-none pb-20">
+<!-- BEGIN: Header -->
+<header class="sticky top-0 z-30 bg-[#f6f9fc]/90 backdrop-blur-md px-4 pt-3 pb-3 flex items-center justify-between border-b border-slate-100" data-purpose="top-navigation">
+<button aria-label="Go back" onclick="history.back()" class="w-9 h-9 flex items-center justify-center text-slate-700 hover:text-slate-900 active:scale-95 transition-transform" type="button"></button>
+<svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h1 class="text-base font-bold text-slate-800 tracking-tight text-center flex-1 pr-9">
+        Nearby Rescue Requests
+      </h1>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-4 pt-2 pb-6 space-y-4">
+<!-- BEGIN: LocationBar -->
+<!-- END: LocationBar -->
+<!-- BEGIN: FilterControls -->
+<section class="flex items-center justify-between gap-3 pt-1 relative" data-purpose="filter-bar">
+<!-- Radius dropdown container -->
+<div class="relative w-full" id="distance-dropdown-container">
+<button aria-expanded="false" aria-haspopup="listbox" class="flex items-center justify-between bg-white border border-slate-200/90 shadow-sm rounded-xl px-3.5 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 active:scale-98 transition w-full" id="distance-toggle-btn" type="button">
+<span id="selected-distance-label">Within 10 km</span>
+<svg class="w-3.5 h-3.5 ml-2 text-slate-400 stroke-2 transition-transform duration-200" fill="none" id="dropdown-chevron" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Dropdown Menu -->
+<div class="hidden absolute left-0 right-0 top-full mt-1.5 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-slate-200/80 py-1 z-50 overflow-hidden transition-all duration-150" id="distance-menu">
+<button class="distance-option w-full px-3.5 py-2.5 text-xs text-left flex items-center justify-between hover:bg-blue-50/70 transition text-slate-700" data-value="Within 5 km" type="button">
+<span class="font-medium">Within 5 km</span>
+<svg class="check-icon hidden w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<button class="distance-option w-full px-3.5 py-2.5 text-xs text-left flex items-center justify-between bg-blue-50/50 text-blue-600 font-semibold hover:bg-blue-50/80 transition" data-value="Within 10 km" type="button">
+<span class="font-medium">Within 10 km</span>
+<svg class="check-icon w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<button class="distance-option w-full px-3.5 py-2.5 text-xs text-left flex items-center justify-between hover:bg-blue-50/70 transition text-slate-700" data-value="Within 15 km" type="button">
+<span class="font-medium">Within 15 km</span>
+<svg class="check-icon hidden w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<button class="distance-option w-full px-3.5 py-2.5 text-xs text-left flex items-center justify-between hover:bg-blue-50/70 transition text-slate-700" data-value="Within 20 km" type="button">
+<span class="font-medium">Within 20 km</span>
+<svg class="check-icon hidden w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Filter action button -->
+</section>
+<!-- END: FilterControls -->
+<!-- BEGIN: RescueRequestList -->
+<section class="space-y-3.5 pt-1" data-purpose="rescue-cards-container">
+<!-- Card 1: Injured Dog -->
+<article class="bg-white rounded-2xl p-3.5 shadow-sm border border-slate-100 flex flex-col justify-between">
+<div class="flex items-start gap-3">
+<img alt="Injured Dog thumbnail" class="w-16 h-16 rounded-xl object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2OUirnrKsICKADI652LbvotYTex7nvvhioBbqyPSM6mDkgDZoH4C88U6ucIlreXES6nAUf_oIUvP7AHbzXziIP-MfDZa5XiMrMI_a4Dwo0lwoYN4_sO9dlljH2xzIsxHHK-LCXk3DC4CQdpslIq1mzPTrhZKTwNunTS1Q94kGdjblcyKzhlIVhUhBTJKrAP-R-QK6nGiwFqSjCuAeRwiLLlyRuXBgh5g8SjEuXlcaS7CHJAQNzqc"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-800 truncate">
+                  INJURED DOG
+                </h2>
+<svg class="w-4 h-4 text-slate-300 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="mt-1 flex items-center">
+<span class="inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-rose-50 text-rose-600">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600 mr-1.5"></span>
+                  Serious injury
+                </span>
+</div>
+<div class="mt-1.5 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+<svg class="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">1.8 km away</span>
+</div>
+<p class="mt-0.5 text-[10px] text-slate-400">Reported 8 min ago</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-3.5 pt-2 grid grid-cols-2 gap-2.5">
+<a href="res_reportdetails.html" 
+   class="w-full py-2 px-3 text-xs font-semibold text-blue-600 bg-white border border-blue-200 rounded-xl hover:bg-blue-50 active:scale-[0.98] transition" type="button">
+   View Details
+</a>
+<button class="accept-btn w-full py-2 px-3 text-xs font-semibold text-white bg-blue-600 rounded-xl shadow-sm hover:bg-blue-700 active:scale-[0.98] transition flex items-center justify-center gap-1.5" type="button">
+<span>Accept</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Sick Cat -->
+<article class="bg-white rounded-2xl p-3.5 shadow-sm border border-slate-100 flex flex-col justify-between">
+<div class="flex items-start gap-3">
+<img alt="Sick Cat thumbnail" class="w-16 h-16 rounded-xl object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBao2KcRbrlb2xYkdqwMOwkuSjumwPNMUed0Bk0dWIz5zUy2C52BPxZSCebCwGMyYwtcIAqC0oopfVDrlVCgPq8e3qLZZGGH0Lc_ay6g5JpBxWR_3hKRLfRGZA7G7o26orfIXGmFg7unBNKAoAqVgesWJT8ZwJ9_VsLdgNH_9TMve9XxxyyxTGFWRLcR47-GOT8If0zpb7Ank4dOZx03KYmZoUgj69jemypn5OLvmy8R9uE9OXdutSV"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-800 truncate">
+                  SICK CAT
+                </h2>
+<svg class="w-4 h-4 text-slate-300 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="mt-1 flex items-center">
+<span class="inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-600">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5"></span>
+                  Moderate
+                </span>
+</div>
+<div class="mt-1.5 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+<svg class="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">3.2 km away</span>
+</div>
+<p class="mt-0.5 text-[10px] text-slate-400">Reported 15 min ago</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<a href="res_reportdetails.html"
+   class="w-full py-2 px-3 text-xs font-semibold text-blue-600 bg-white border border-blue-200 rounded-xl hover:bg-blue-50 active:scale-[0.98] transition" type="button">
+    View Details
+</a>
+<button class="accept-btn w-full py-2 px-3 text-xs font-semibold text-white bg-blue-600 rounded-xl shadow-sm hover:bg-blue-700 active:scale-[0.98] transition flex items-center justify-center gap-1.5" type="button">
+<span>Accept</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Injured Puppy -->
+<article class="bg-white rounded-2xl p-3.5 shadow-sm border border-slate-100 flex flex-col justify-between">
+<div class="flex items-start gap-3">
+<img alt="Injured Puppy thumbnail" class="w-16 h-16 rounded-xl object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmLND5xKPvID5i63wjisOwdyibrvw1Kj79zUDCrac3CF3cTAWlRX5Z-oH1oEM-t5tNAQGvZP6GNDBOZqNbih1oM5yDgkKaumzzL61fdj8VlMlOfkaXf5qpJVfhIZ26Yo0YoHPlEfM4G3V9T_kP6dETepdnpV4DqZtlgnGCjixs_EZcPuaGacBvkAAHLwTsFiNYwQKcVPi5y1xkQq0bP_WxvISAUfPU6xc_Dx2Mlur7wWRbGifMu9xy"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-800 truncate">
+                  INJURED PUPPY
+                </h2>
+<svg class="w-4 h-4 text-slate-300 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="mt-1 flex items-center">
+<span class="inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-rose-50 text-rose-600">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600 mr-1.5"></span>
+                  Serious injury
+                </span>
+</div>
+<div class="mt-1.5 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+<svg class="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">4.7 km away</span>
+</div>
+<p class="mt-0.5 text-[10px] text-slate-400">Reported 22 min ago</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<a href="res_reportdetails.html"
+   class="w-full py-2 px-3 text-xs font-semibold text-blue-600 bg-white border border-blue-200 rounded-xl hover:bg-blue-50 active:scale-[0.98] transition" type="button">
+   View Details
+</a>
+<button class="accept-btn w-full py-2 px-3 text-xs font-semibold text-white bg-blue-600 rounded-xl shadow-sm hover:bg-blue-700 active:scale-[0.98] transition flex items-center justify-center gap-1.5" type="button">
+<span>Accept</span>
+</button>
+</div>
+</article>
+</section>
+<!-- END: RescueRequestList -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomTabBar -->
+<nav class="fixed bottom-0 max-w-md w-full bg-white border-t border-slate-200/80 px-6 py-2 z-40 flex justify-between items-center text-[10px] font-medium shadow-lg" data-purpose="bottom-tab-bar">
+<!-- Home Tab -->
+<a class="flex flex-col items-center text-slate-400 hover:text-slate-600 transition" href="res_1home.html">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="">Home</span>
+</a>
+<!-- Requests Tab (Active) -->
+<a class="flex flex-col items-center text-blue-600" href="#">
+<div class="relative">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="font-bold">Requests</span>
+</a>
+<!-- Map Tab -->
+<a class="flex flex-col items-center text-slate-400 hover:text-slate-600 transition" href="res_history.html">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="">History</span>
+</a>
+<!-- Profile Tab -->
+<a class="flex flex-col items-center text-slate-400 hover:text-slate-600 transition" href="res_profile.html">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="">Profile</span>
+</a>
+</nav>
+<!-- END: BottomTabBar -->
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('distance-dropdown-container');
+    const toggleBtn = document.getElementById('distance-toggle-btn');
+    const menu = document.getElementById('distance-menu');
+    const label = document.getElementById('selected-distance-label');
+    const chevron = document.getElementById('dropdown-chevron');
+    const options = document.querySelectorAll('.distance-option');
+
+    function openDropdown() {
+      menu.classList.remove('hidden');
+      chevron.classList.add('rotate-180');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDropdown() {
+      menu.classList.add('hidden');
+      chevron.classList.remove('rotate-180');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    options.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const value = option.getAttribute('data-value');
+        label.textContent = value;
+
+        // Update active classes and checkmark visibility
+        options.forEach(opt => {
+          const checkIcon = opt.querySelector('.check-icon');
+          if (opt === option) {
+            opt.classList.add('bg-blue-50/50', 'text-blue-600', 'font-semibold');
+            opt.classList.remove('text-slate-700');
+            if (checkIcon) checkIcon.classList.remove('hidden');
+          } else {
+            opt.classList.remove('bg-blue-50/50', 'text-blue-600', 'font-semibold');
+            opt.classList.add('text-slate-700');
+            if (checkIcon) checkIcon.classList.add('hidden');
+          }
+        });
+
+        closeDropdown();
+      });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!container.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    // Accept Button Handler
+    const acceptBtns = document.querySelectorAll('.accept-btn');
+    acceptBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (this.disabled) return;
+        this.disabled = true;
+        this.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'active:scale-[0.98]');
+        this.classList.add('bg-emerald-600', 'text-white', 'cursor-default', 'opacity-95');
+        this.innerHTML = `
+          <svg class="w-3.5 h-3.5 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4.5 12.75l6 6 9-13.5"></path>
+          </svg>
+          <span class="truncate">Request Accepted</span>
+        `;
+      });
+    });
+  });
+</script>
+</body></html>

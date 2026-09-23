@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PawAlert - Profile &amp; Impact</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            handwriting: ['"Caveat"', 'cursive']
+          },
+          colors: {
+            paw: {
+              blue: '#2563EB',
+              darkBlue: '#1D4ED8',
+              sky: '#38BDF8',
+              lightBlue: '#EFF6FF',
+              cardBg: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    /* Hide scrollbars for horizontal carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .profile-bg-curve {
+      border-bottom-left-radius: 2.5rem;
+      border-bottom-right-radius: 2.5rem;
+    }
+  </style>
+</head>
+<body class="bg-[#EEF5FC] text-slate-800 font-sans antialiased pb-28 min-h-screen select-none">
+<!-- Mobile App Frame Container -->
+<div class="max-w-md mx-auto relative bg-[#F4F9FD] min-h-screen shadow-2xl flex flex-col justify-between overflow-hidden">
+<!-- BEGIN: TopHeaderSection -->
+<header class="relative bg-gradient-to-br from-[#1E56A0] via-[#2F80ED] to-[#70A6FF] text-white pt-5 pb-28 px-5 rounded-b-[2.5rem] shadow-sm">
+<!-- Decorative Background Paw Prints -->
+<div class="absolute top-2 right-24 opacity-25 text-white text-xl">
+<i class="fa-solid fa-paw transform rotate-12"></i>
+</div>
+<div class="absolute top-6 right-16 opacity-20 text-white text-3xl">
+<i class="fa-solid fa-paw transform -rotate-12"></i>
+</div>
+<div class="absolute top-16 right-36 opacity-15 text-white text-lg">
+<i class="fa-solid fa-paw transform rotate-45"></i>
+</div>
+<!-- App Branding Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-inner">
+<img alt="PawAlert heart-paw logo" class="w-full h-full object-contain" src="assets/pawalert-heart-icon.png">
+</div>
+<div>
+<h1 class="text-xl font-extrabold tracking-tight leading-none text-white drop-shadow-sm">PawAlert</h1>
+<p class="text-[11px] font-medium text-blue-100 tracking-wide mt-0.5">See. Report. Save a Life.</p>
+</div>
+</div>
+<!-- Cursive Slogan -->
+<div class="text-right">
+<p class="font-handwriting text-blue-100 text-lg leading-tight -rotate-3 select-none">
+            Kindness<br/>makes a<br/>difference <span class="text-xs">♡</span>
+</p>
+</div>
+</div>
+</header>
+<!-- END: TopHeaderSection -->
+<!-- BEGIN: ProfileHeaderCard -->
+<section class="relative px-4 -mt-20 z-10" data-purpose="user-profile-header">
+<div class="bg-white/95 backdrop-blur-md rounded-3xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white relative overflow-hidden">
+<!-- Background Pet Duo Illustration / Graphic -->
+<div class="absolute -bottom-2 -right-3 w-36 pointer-events-none opacity-95">
+<img alt="Puppy and kitten" class="w-full h-auto object-cover rounded-tl-2xl drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxGU20VaiAyKuXKe85wFOsNBisVawGKakvBH7tgLXWeepSZUeVBG8X3SsgpsmfIesEefSelI2_JfjUhDqUyD0ZgqYSrN5SVK1wVI7F0ME-Tlbv8_9MBWFE0MQBJvceghyonhdzOZbh8JHCu9qOLOuLCR9oRDqAiy5Y06ndq7lHLmTEDLYL9nle371bkPGJCznOMVoALjuG8G1i5ntGkWBA-Y1VRO-p9Bw8QFToC0BuHSB-5rMt2GKAMQ"/>
+</div>
+<div class="flex items-start space-x-4">
+<!-- User Information -->
+<div class="flex-1 pr-14">
+<h2 class="text-lg font-bold text-slate-800 tracking-tight leading-snug">Jaheed</h2>
+<!-- Verified Badge -->
+<div class="inline-flex items-center space-x-1.5 text-blue-600 text-xs font-semibold mt-0.5">
+<i class="fa-solid fa-user-shield text-[13px]"></i>
+<span>Verified User</span>
+<i class="fa-solid fa-circle-check text-[11px] text-blue-500"></i>
+</div>
+<!-- Email & Phone Contact -->
+<div class="mt-1.5 space-y-0.5">
+<div class="flex items-center space-x-2 text-slate-500 text-[11px]">
+<i class="fa-regular fa-envelope text-slate-400 w-3 text-center"></i>
+<span>jaheed@gmail.com</span>
+</div>
+<div class="flex items-center space-x-2 text-slate-500 text-[11px]">
+<i class="fa-solid fa-phone text-slate-400 w-3 text-center"></i>
+<span>+91 98765 43210</span>
+</div>
+</div>
+<!-- Animal Lover Pill Tag -->
+<div class="mt-2.5">
+<span class="inline-flex items-center space-x-1.5 bg-blue-50 text-paw-blue text-[11px] font-semibold px-2.5 py-0.5 rounded-full border border-blue-100 shadow-sm">
+<i class="fa-solid fa-paw text-[10px]"></i>
+<span>Animal Lover ♡</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProfileHeaderCard -->
+<!-- BEGIN: ImpactStatsGrid -->
+<section class="px-4 mt-3" data-purpose="impact-metrics">
+<div class="bg-white rounded-2xl p-3 shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100">
+<div class="grid grid-cols-4 gap-2 text-center">
+<!-- Metric 1: Reports Submitted -->
+<div class="flex flex-col items-center">
+<div class="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-paw-blue mb-1">
+<i class="fa-solid fa-paw text-sm"></i>
+</div>
+<span class="text-base font-extrabold text-slate-800 leading-tight">5</span>
+<span class="text-[10px] text-slate-400 font-medium leading-tight mt-0.5">Reports<br/>Submitted</span>
+</div>
+<!-- Metric 2: Helped Animals -->
+<div class="flex flex-col items-center border-l border-slate-100">
+<div class="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 mb-1">
+<i class="fa-solid fa-hand-holding-heart text-sm"></i>
+</div>
+<span class="text-base font-extrabold text-slate-800 leading-tight">3</span>
+<span class="text-[10px] text-slate-400 font-medium leading-tight mt-0.5">Helped<br/>Animals</span>
+</div>
+<!-- Metric 3: Saved Lives -->
+<div class="flex flex-col items-center border-l border-slate-100">
+<div class="w-9 h-9 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 mb-1">
+<i class="fa-solid fa-heart-pulse text-sm"></i>
+</div>
+<span class="text-base font-extrabold text-slate-800 leading-tight">2</span>
+<span class="text-[10px] text-slate-400 font-medium leading-tight mt-0.5">Saved<br/>Lives</span>
+</div>
+<!-- Metric 4: Badges Earned -->
+<div class="flex flex-col items-center border-l border-slate-100">
+<div class="w-9 h-9 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 mb-1">
+<i class="fa-solid fa-star text-sm"></i>
+</div>
+<span class="text-base font-extrabold text-slate-800 leading-tight">0</span>
+<span class="text-[10px] text-slate-400 font-medium leading-tight mt-0.5">Badges<br/>Earned</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ImpactStatsGrid -->
+<!-- BEGIN: MyReportsCarousel -->
+<section class="px-4 mt-4" data-purpose="submitted-reports">
+<div class="bg-white rounded-2xl p-3.5 shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center space-x-2.5">
+<div class="w-8 h-8 rounded-xl bg-blue-500 text-white flex items-center justify-center shadow-sm">
+<i class="fa-solid fa-file-lines text-sm"></i>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-800 leading-none">My Reports</h3>
+<p class="text-[10px] text-slate-400 font-medium mt-0.5">View and manage your submitted reports</p>
+</div>
+</div>
+<!-- View All Link -->
+<a class="inline-flex items-center px-2.5 py-1 text-[11px] font-semibold text-paw-blue bg-blue-50/60 rounded-full border border-blue-100 hover:bg-blue-100/50 transition" href="Report.html">
+            View All <i class="fa-solid fa-chevron-right text-[9px] ml-1"></i>
+</a>
+</div>
+<!-- Horizontal Cards Scroll -->
+<div class="flex space-x-3 overflow-x-auto no-scrollbar pb-1 pt-0.5">
+<!-- Card 1: Puppy (Needs Help) -->
+<div class="min-w-[155px] w-[155px] bg-slate-50/80 rounded-xl p-2 border border-slate-100 flex-shrink-0 shadow-sm">
+<div class="relative w-full h-24 rounded-lg overflow-hidden mb-2 bg-slate-200">
+<img alt="Puppy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABak2YcBz5Fpe48NSwzXX4d8ZyW2G7BC9rmLAQIgWXbsmFz3d8jyW1kVfzqExuznTh_Wghq1Gtt4KZuUZp2QaJFUiQZwaOh9CnFQkFmtBflitWmKvCjszDn1HzbOG9KwOTNVj7XB0599nZSV7hX2Q77zP-QeFN3fQgeUP00GzVzUF7aFkVvsPNyAbIzgyPvC_sA3XKMbIxh2eQ29ip4fgMeGjmWncVATMqWXw1QnlSLl-toXVK46jWQQ"/>
+<span class="absolute top-1.5 right-1.5 bg-rose-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
+                Needs Help
+              </span>
+</div>
+<div class="flex items-center space-x-1 text-slate-700 font-bold text-xs mb-0.5">
+<i class="fa-solid fa-paw text-[10px] text-blue-500"></i>
+<span>Puppy</span>
+</div>
+<div class="flex items-center space-x-1 text-[10px] text-slate-400 truncate mb-0.5">
+<i class="fa-solid fa-location-dot text-[9px]"></i>
+<span class="truncate">LB Nagar, Hyderabad</span>
+</div>
+<div class="flex items-center space-x-1 text-[9px] text-slate-400">
+<i class="fa-regular fa-clock text-[8px]"></i>
+<span>2 hours ago</span>
+</div>
+</div>
+<!-- Card 2: Cat (Help Requested) -->
+<div class="min-w-[155px] w-[155px] bg-slate-50/80 rounded-xl p-2 border border-slate-100 flex-shrink-0 shadow-sm">
+<div class="relative w-full h-24 rounded-lg overflow-hidden mb-2 bg-slate-200">
+<img alt="Cat" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Fqlrv3orIPicLs7KgUyM1vXvD_GYvq5-k9L00ajm8WPSRxb7UvIQYb3SUGOfQhFH7Mng9kX1WsEJtoJVJkghJXVv1De2XQNB6gTIAiuVrPRR0Zwc5CbPibsCmu-weeA4dgY_B8K6XlEreJQBTUiXRtPcnqQs3_MJChoT38snBXJtuC7HCefbw8sYlN8BswsyrQtz-yZqTs7LCv_sMu6IXUgG0di-DInd-PZGZPDcuC1IoYWJb6T0JA"/>
+<span class="absolute top-1.5 right-1.5 bg-amber-400 text-slate-900 text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
+                Help Requested
+              </span>
+</div>
+<div class="flex items-center space-x-1 text-slate-700 font-bold text-xs mb-0.5">
+<i class="fa-solid fa-cat text-[10px] text-blue-500"></i>
+<span>Cat</span>
+</div>
+<div class="flex items-center space-x-1 text-[10px] text-slate-400 truncate mb-0.5">
+<i class="fa-solid fa-location-dot text-[9px]"></i>
+<span class="truncate">Kondapur, Hyderabad</span>
+</div>
+<div class="flex items-center space-x-1 text-[9px] text-slate-400">
+<i class="fa-regular fa-clock text-[8px]"></i>
+<span>1 day ago</span>
+</div>
+</div>
+<!-- Card 3: Dog (Help Provided) -->
+<div class="min-w-[155px] w-[155px] bg-slate-50/80 rounded-xl p-2 border border-slate-100 flex-shrink-0 shadow-sm">
+<div class="relative w-full h-24 rounded-lg overflow-hidden mb-2 bg-slate-200">
+<img alt="Dog" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdV8n8-urM1tWREO990bYQdGrSSncGbcMQzUXQXrNo0KeTEEjPD3kepKBn2u-8ugEN2S-ePDZqJNAXGmnjJ4BRfkp0AGhjFGO9D_kDh5qZ7DiN-MnYhTaqXEoP6xFOuga5wmTX59jYYRNjlqj0T8pnCvIUmiEHD124jS7fVm05hRWrSgkvc4G7iCgT3jsL2TPlpnu5x_Yidxp4cb46yxbtZrI0RvPGt09BtTCa-8lFe-j4Z2bYpaZ-EQ"/>
+<span class="absolute top-1.5 right-1.5 bg-emerald-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
+                Help Provided
+              </span>
+</div>
+<div class="flex items-center space-x-1 text-slate-700 font-bold text-xs mb-0.5">
+<i class="fa-solid fa-dog text-[10px] text-blue-500"></i>
+<span>Dog</span>
+</div>
+<div class="flex items-center space-x-1 text-[10px] text-slate-400 truncate mb-0.5">
+<i class="fa-solid fa-location-dot text-[9px]"></i>
+<span class="truncate">Miyapur, Hyderabad</span>
+</div>
+<div class="flex items-center space-x-1 text-[9px] text-slate-400">
+<i class="fa-regular fa-clock text-[8px]"></i>
+<span>2 days ago</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MyReportsCarousel -->
+<!-- BEGIN: SettingsAndMenuNavigation -->
+<section class="px-4 mt-4 space-y-2.5 relative" data-purpose="user-settings-menu">
+<!-- Cursive Slogan -->
+<div class="flex justify-end items-center space-x-2 pointer-events-none select-none pb-2">
+<div class="text-paw-blue/30 text-lg">
+<i class="fa-solid fa-paw"></i>
+</div>
+<div class="text-right">
+<p class="font-handwriting text-paw-blue text-sm font-semibold -rotate-3 leading-tight">
+              Together<br/>we can save<br/>more lives <span class="text-xs">♡</span>
+</p>
+</div>
+</div>
+<!-- Log Out Button -->
+<div class="pt-2 pb-2 w-full flex justify-center">
+<button class="w-[78%] flex items-center justify-center space-x-2 py-3 px-5 bg-[#DCEAF8] hover:bg-blue-100/90 text-paw-blue rounded-full text-sm font-bold transition shadow-sm active:scale-95" type="button" onclick="window.location.href='sign in.html'">
+<i class="fa-solid fa-arrow-right-from-bracket"></i>
+<span>Log Out</span>
+</button>
+</div>
+</section>
+<!-- END: SettingsAndMenuNavigation -->
+<!-- BEGIN: BottomNavigationBar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200/80 py-2 px-3 z-50">
+<div class="flex items-center justify-around relative">
+<!-- Tab: Home -->
+<a class="flex flex-col items-center justify-center w-14 text-slate-400 hover:text-paw-blue transition-colors" href="Home.html">
+<i class="fa-solid fa-house text-lg"></i>
+<span class="text-[10px] font-medium mt-1">Home</span>
+</a>
+<!-- Tab: Reports -->
+<a class="flex flex-col items-center justify-center w-14 text-slate-400 hover:text-paw-blue transition-colors" href="Report.html">
+<i class="fa-regular fa-clipboard text-lg"></i>
+<span class="text-[10px] font-medium mt-1">Reports</span>
+</a>
+<!-- Center Raised Action Button: Report '+' -->
+<div class="relative -top-5 flex flex-col items-center">
+<a aria-label="Quick Report" class="w-13 h-13 p-3.5 rounded-full bg-gradient-to-tr from-paw-blue to-blue-400 text-white shadow-[0_6px_20px_rgba(37,99,235,0.45)] border-4 border-white active:scale-90 transition-transform" href="Add Report.html">
+<i class="fa-solid fa-plus text-xl"></i>
+</a>
+<span class="text-[10px] font-semibold text-paw-blue mt-0.5">Report</span>
+</div>
+<!-- Tab: Map -->
+<a class="flex flex-col items-center justify-center w-14 text-slate-400 hover:text-paw-blue transition-colors" href="Map.html">
+<i class="fa-regular fa-map text-lg"></i>
+<span class="text-[10px] font-medium mt-1">Map</span>
+</a>
+<!-- Tab: Profile (Active) -->
+<a class="flex flex-col items-center justify-center w-14 text-paw-blue relative" href="Profile.html">
+<i class="fa-solid fa-user text-lg"></i>
+<span class="text-[10px] font-bold mt-1">Profile</span>
+<!-- Active Tab Indicator Bar -->
+<div class="w-7 h-0.5 bg-paw-blue rounded-full mt-0.5"></div>
+</a>
+</div>
+</nav>
+<!-- END: BottomNavigationBar -->
+</div>
+</body></html>

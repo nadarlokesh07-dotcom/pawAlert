@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>PawAlert - See. Report. Save a Life.</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800& amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN with Forms and Container Queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pawNavy: '#0F2552',
+            pawBlue: '#2563EB',
+            pawBlueDark: '#1d4ed8',
+            pawRed: '#E53E3E',
+            pawSlate: '#5B6472',
+            surfaceBg: '#F3F7FF',
+            pedestalBg: '#DCE8FD',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Stylesheets -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #E2E8F0;
+    }
+  </style>
+<style data-purpose="decorative-shapes">
+    /* Subtle background watermark doodles */
+    .paw-watermark {
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .heart-watermark {
+      opacity: 0.22;
+      pointer-events: none;
+    }
+    /* Rounded curved base for hero animals */
+    .pedestal-curve {
+      border-radius: 50% 50% 0 0 / 24px 24px 0 0;
+    }
+  </style>
+<!-- END: Stylesheets -->
+</head>
+<body class="min-h-screen flex items-center justify-center p-0 sm:p-4 selection:bg-blue-100 selection:text-blue-900">
+<!-- BEGIN: MobileDeviceFrame -->
+<main class="w-full max-w-[400px] min-h-screen sm:min-h-[844px] sm:h-[844px] bg-gradient-to-b from-[#FFFFFF] via-[#F6F9FF] to-[#E8F1FD] sm:rounded-[44px] shadow-2xl overflow-hidden flex flex-col justify-between relative border border-slate-100/60" data-purpose="splash-container">
+<!-- Decorative floating icons in background -->
+<!-- Heart upper left -->
+<svg aria-hidden="true" class="absolute top-[280px] left-6 w-9 h-9 text-blue-400 heart-watermark" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<!-- Paw print mid-left -->
+<svg aria-hidden="true" class="absolute top-[230px] left-5 w-8 h-8 text-blue-400 paw-watermark" fill="currentColor" viewBox="0 0 24 24">
+<ellipse cx="6.5" cy="8.5" rx="2" ry="3"></ellipse>
+<ellipse cx="11" cy="5.5" rx="2" ry="3"></ellipse>
+<ellipse cx="16" cy="7" rx="2" ry="3"></ellipse>
+<path d="M12 11.5c-3.2 0-5.5 2-5 5 .4 2.5 3 3.5 5 3.5s4.6-1 5-3.5c.5-3-1.8-5-5-5z"></path>
+</svg>
+<!-- Paw print mid-right -->
+<svg aria-hidden="true" class="absolute top-[240px] right-6 w-10 h-10 text-blue-400 paw-watermark" fill="currentColor" viewBox="0 0 24 24">
+<ellipse cx="7.5" cy="8" rx="2.2" ry="3.2"></ellipse>
+<ellipse cx="12.5" cy="5" rx="2.2" ry="3.2"></ellipse>
+<ellipse cx="17.5" cy="7.5" rx="2.2" ry="3.2"></ellipse>
+<path d="M13 11.5c-3.5 0-6 2-5.5 5.5.4 2.8 3.2 3.8 5.5 3.8s5-1 5.5-3.8c.5-3.5-2-5.5-5.5-5.5z"></path>
+</svg>
+<!-- Tiny paw lower right -->
+<svg aria-hidden="true" class="absolute top-[315px] right-4 w-6 h-6 text-blue-400 paw-watermark" fill="currentColor" viewBox="0 0 24 24">
+<ellipse cx="6.5" cy="8.5" rx="1.8" ry="2.6"></ellipse>
+<ellipse cx="11" cy="5.5" rx="1.8" ry="2.6"></ellipse>
+<ellipse cx="15.5" cy="7" rx="1.8" ry="2.6"></ellipse>
+<path d="M11.5 12c-2.8 0-4.8 1.8-4.4 4.5.3 2.2 2.6 3 4.4 3s4-.8 4.4-3c.4-2.7-1.6-4.5-4.4-4.5z"></path>
+</svg>
+<!-- BEGIN: HeaderSection -->
+<header class="pt-8 px-6 text-center z-10 flex flex-col items-center" data-purpose="brand-header">
+<!-- PawAlert Logo Brand Image -->
+<div class="w-32 h-32 mb-1 flex items-center justify-center mix-blend-multiply">
+<img alt="PawAlert Logo" class="w-full h-full object-contain filter drop-shadow-sm" src="assets/pawalert-logo-heart.png">
+</div>
+<!-- Tagline -->
+<h1 class="text-[22px] font-extrabold text-[#2563EB] tracking-tight leading-snug mt-1">
+        See. Report. Save a Life.
+      </h1>
+<!-- Subtitle Description -->
+<p class="text-[13.5px] leading-relaxed text-pawSlate font-normal mt-2.5 max-w-[270px]">
+        Help injured or stranded animals by reporting them and making our streets safer for paws.
+      </p>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: HeroVisualSection -->
+<section class="relative w-full flex-1 flex flex-col justify-end items-center z-0 -mt-2" data-purpose="hero-illustration">
+<!-- Cutout animals from visual reference -->
+<div class="relative w-full max-w-[340px] h-[260px] flex items-end justify-center overflow-hidden">
+<img alt="Puppy and kitten companion" class="w-full h-full object-cover object-[center_70%] pointer-events-none drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj6pH3MTY73tG1j8sF2JTfFtEnidmRBvYMrx5rHkk4G92rQCeVRJNeXiFlOUQOUlvJ3Vzmsxil4B7fhP2RYaERlzxEkDMRghUBQ71xi57unRKrOOF4UOCO2F2XOUpvYNPn4kIVom4eaI5NiSDVvMxiiEolW_LMNvGK-aeKfu-AHpfmM7YrlhUQ5-KpGj74JHvv_-deTy2YXQZXVecn4UEq3vKkPPZJFeF8AnuuGXrF60M7-Z5gF3EiC536uRhzS6zsogo">
+</div>
+<!-- Bottom curved pedestal ground surface overlay -->
+<div class="w-full h-8 bg-gradient-to-t from-[#D6E6FD]/90 via-[#DCEBFF]/50 to-transparent -mt-5 z-10 pointer-events-none"></div>
+</section>
+<!-- END: HeroVisualSection -->
+<!-- BEGIN: ActionButtonsSection -->
+<section class="pb-8 pt-2 px-6 bg-[#E8F1FD]/85 backdrop-blur-[2px] z-20 flex flex-col items-center gap-3.5" data-purpose="cta-actions">
+<!-- Primary CTA: Sign In -->
+<a class="w-full py-3.5 px-6 rounded-2xl bg-[#2563EB] hover:bg-[#1D4ED8] active:scale-[0.985] transition-all duration-150 text-white font-bold text-center text-[16px] tracking-wide shadow-md shadow-blue-500/25 block" data-purpose="sign-in-btn" href="sign in.html" role="button">
+        Sign In
+      </a>
+<!-- Secondary CTA: Create Account -->
+      <a class="w-full py-3.5 px-6 rounded-2xl bg-white hover:bg-slate-50 border-[1.5px] border-[#2563EB] active:scale-[0.985] transition-all duration-150 text-[#2563EB] font-bold text-center text-[16px] tracking-wide shadow-sm block" data-purpose="create-account-btn" href="Create Account.html" role="button">
+        Create Account
+      </a>
+</a>
+<!-- Tertiary Action: Continue as Guest -->
+<a class="mt-1 text-[14.5px] font-semibold text-[#2563EB] hover:text-[#1D4ED8] active:opacity-75 transition-colors py-1 px-4 text-center inline-block" data-purpose="guest-link" href="#guest">
+        Continue as Guest
+      </a>
+<!-- iOS Home Indicator bar spacer for mobile feel -->
+<div aria-hidden="true" class="w-32 h-1 bg-slate-300/80 rounded-full mt-2 mx-auto"></div>
+</section>
+<!-- END: ActionButtonsSection -->
+</main>
+<!-- END: MobileDeviceFrame -->
+<!-- This page contains navigation only; it has no JavaScript functions. -->
+</body></html>

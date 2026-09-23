@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Sign In</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "background": "#f8f9ff", "on-background": "#131c28", "outline-variant": "#c4c5d9", "tertiary-fixed": "#ffdad6", "surface-white": "#FFFFFF", "canvas-background": "#EAF0FB", "primary-pressed": "#2A45D8", "primary-light": "#EEF2FF", "secondary-container": "#b4c5fd", "inverse-surface": "#28313d", "on-tertiary-container": "#fff1ef", "outline": "#747687", "surface-bright": "#f8f9ff", "on-secondary": "#ffffff", "primary-fixed-dim": "#bac3ff", "surface-container-lowest": "#ffffff", "surface-variant": "#dae3f4", "surface-dim": "#d2daeb", "on-error": "#ffffff", "inverse-on-surface": "#eaf1ff", "surface": "#f8f9ff", "on-surface-variant": "#444656", "icon-muted": "#C7D4EC", "on-tertiary-fixed": "#410002", "tertiary": "#b20112", "surface-container-low": "#eff4ff", "surface-container-highest": "#dae3f4", "text-primary": "#101828", "secondary-fixed": "#dbe1ff", "on-secondary-fixed": "#031847", "tertiary-container": "#d62828", "on-error-container": "#93000a", "error": "#ba1a1a", "primary-fixed": "#dee0ff", "secondary-fixed-dim": "#b4c5fd", "on-surface": "#131c28", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#344575", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#ffb4ab", "on-secondary-container": "#405182", "surface-container-high": "#e0e9f9", "on-primary-container": "#f3f2ff", "on-tertiary-fixed-variant": "#93000d", "on-primary-fixed-variant": "#002ecb", "on-tertiary": "#ffffff", "secondary": "#4c5d8e", "border-subtle": "#D8E1F2", "primary": "#183fe6", "on-primary": "#ffffff", "surface-tint": "#2648ee", "inverse-primary": "#bac3ff", "primary-container": "#3d5cff", "on-primary-fixed": "#000f5c" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-md": "1rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "margin": "1.5rem" }, fontFamily: { "headline-xl": ["Plus Jakarta Sans"], "button-label": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "body-md-bold": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "button-label": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-md-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-canvas-background text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-light selection:text-primary"><header class="fixed top-0 w-full z-50 bg-canvas-background/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-surface-white flex items-center justify-center text-text-primary shadow-[0_2px_8px_rgba(11,31,78,0.06)] active:scale-95 transition-transform" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary truncate max-w-[200px]">Sign In</h1></div><div class="flex items-center gap-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_6px_rgba(11,31,78,0.08)]" src="https://lh3.googleusercontent.com/aida/AEtjO1W9X6O9oerFVYYmC14CP7_xbDc4YwrrPARpt-p1OABI5ENtnCp8u_uIZBIHZzWOC5DoZRIlljhLFCgAsQlT-lquAHmUiO3upynsa5-Lt5yzyiwtRylnyXhwYjzAPxnWTKkfia3Bg_btrC67mss_UmjgcT3egd8XMIA7Prl09wV-i-qOAP0mbnAOSPzvwtT5AunJavQf2VU-bI2QCnZt7G9SPvcH10wYshDwRyHzR-9BjPlcG8dYrnQ4tmFP_JEue-dpdEY9hrZTFQ"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-canvas-background"><div class="flex flex-col w-full">
+<div class="w-full max-w-[440px] mx-auto px-margin py-space-md flex flex-col gap-space-lg items-center">
+<!-- Header Greeting -->
+<div class="flex flex-col items-center text-center space-y-space-xs">
+<div class="flex items-center justify-center gap-space-xs">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-text-primary tracking-tight">Welcome Back!</h2>
+<span class="material-symbols-outlined text-primary-container text-[26px] select-none" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px]">
+        Sign in to continue and help animals in need.
+      </p>
+</div>
+<!-- Illustration Presentation Frame -->
+<div class="relative w-full rounded-lg bg-surface-container-low shadow-[0_4px_20px_-2px_rgba(11,31,78,0.04)] overflow-hidden flex flex-col items-center justify-end pt-space-md px-space-md pb-0 min-h-[190px]">
+<!-- Gentle Background Elements -->
+<div class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-surface-white/60 blur-xl pointer-events-none"></div>
+<div class="absolute top-2 right-4 w-28 h-28 rounded-full bg-primary-light/70 blur-xl pointer-events-none"></div>
+<!-- Ambient Heart Motif -->
+<div class="absolute top-3 left-1/2 -translate-x-1/2 flex items-center justify-center z-10 animate-bounce">
+<span class="material-symbols-outlined text-primary-container text-[24px] drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<!-- Hero Artwork -->
+<div class="relative z-10 w-full max-w-[280px] h-[155px] flex items-end justify-center">
+<img class="w-full h-full object-contain object-bottom pointer-events-none drop-shadow-sm" data-alt="A warm, cheerful 2D vector graphic illustration of a happy golden-furred puppy and a curious charcoal grey kitten sitting closely side by side on a soft pastel ground. Above them sits a tiny floating royal blue heart. The background has subtle periwinkle sky washes, soft white cloud shapes, and minimal plant silhouettes in a gentle children's book story aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgx2ox8qxVXN5UPhyWnp952H2KRA0RyVtAiZZ0QfbZXSZy_r-Ms1UFxJj1J1VryktSD1j2KEUc6C-7cjdwx-yR5ziH7H6MS2-YXVpQrr1ZKnMLII4k7HFzsIW6bdYBDtLiXMQcB2zXCn0Q_g4m5oDUh1PnY-eHspT9gy1MvXElgzUT-NJTnfJm7yzcUOmJ563w5JG74oGHuuexiGMicW1IwGSMebvjNUYfEXeT5bicLAutm2jfQVI2lQ"/>
+</div>
+</div>
+<!-- Main Sign In Form Card -->
+<div class="w-full rounded-lg bg-surface-white p-space-lg shadow-[0_4px_20px_-2px_rgba(11,31,78,0.06)] flex flex-col gap-space-md">
+<!-- Mobile / Email Input Field -->
+<div class="flex flex-col gap-1.5">
+<label class="flex items-center gap-space-xs font-body-md-bold text-body-md-bold text-text-primary px-1" for="login-identifier">
+<span class="material-symbols-outlined text-[18px] text-secondary">contact_page</span>
+<span>Mobile Number / Email</span>
+</label>
+<div class="relative flex items-center w-full">
+<div class="absolute left-4 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<input class="w-full h-[52px] pl-11 pr-4 rounded-full bg-surface-container-lowest text-text-primary font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-white shadow-[0_2px_8px_rgba(11,31,78,0.04)] focus:shadow-[0_0_0_3px_rgba(61,92,255,0.18)] transition-all" id="login-identifier" placeholder="Enter mobile number or email" type="text"/>
+</div>
+</div>
+<!-- Password Input Field -->
+<div class="flex flex-col gap-1.5">
+<label class="flex items-center gap-space-xs font-body-md-bold text-body-md-bold text-text-primary px-1" for="login-password">
+<span class="material-symbols-outlined text-[18px] text-secondary">lock</span>
+<span>Password</span>
+</label>
+<div class="relative flex items-center w-full">
+<div class="absolute left-4 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+</div>
+<input class="w-full h-[52px] pl-11 pr-12 rounded-full bg-surface-container-lowest text-text-primary font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-white shadow-[0_2px_8px_rgba(11,31,78,0.04)] focus:shadow-[0_0_0_3px_rgba(61,92,255,0.18)] transition-all" id="login-password" placeholder="Enter password" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-3.5 p-1.5 flex items-center justify-center text-secondary hover:text-text-primary transition-colors focus:outline-none rounded-full" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password Link -->
+<div class="flex justify-end pr-1 -mt-1">
+<button class="font-body-md-bold text-body-md text-primary-container hover:text-primary-pressed transition-colors focus:outline-none" type="button">
+          Forgot Password?
+        </button>
+</div>
+<!-- Primary Action: Sign In -->
+<button class="w-full h-[54px] rounded-full bg-primary-container hover:bg-primary-pressed text-on-primary font-button-label text-button-label flex items-center justify-center gap-space-xs shadow-[0_8px_24px_-4px_rgba(61,92,255,0.32)] active:scale-[0.98] active:shadow-[0_2px_8px_rgba(61,92,255,0.20)] transition-all mt-1" type="button">
+       <a href = "Home.html">Sign In</a>
+      </button>
+</div>
+<!-- Footer Switch Account -->
+<div class="flex items-center justify-center gap-1.5 py-space-xs text-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Don't have an account?</span>
+<button class="font-body-md-bold text-body-md text-primary-container hover:text-primary-pressed transition-colors underline-offset-2 hover:underline" type="button">
+        <a href = "Create Account.html">Create Account</a>
+      </button>
+</div>
+<!-- Trust & Animal Welfare Micro-Badge -->
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-white/70 shadow-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary-container">verified_user</span>
+<span class="font-caption text-caption">24/7 Verified Community Rescue Dispatch</span>
+</div>
+</div>
+</div>
+<script>
+  // Initialize password visibility controls for the sign-in form.
+  // Find the password controls and register their behavior.
+  (function() {
+    const toggleBtn = document.getElementById('toggle-password');
+    const pwdInput = document.getElementById('login-password');
+    const eyeIcon = document.getElementById('eye-icon');
+
+    if (toggleBtn && pwdInput && eyeIcon) {
+      // Toggle the password input type and matching icon.
+      // Switch between masked and visible password text.
+      toggleBtn.addEventListener('click', function() {
+        const isPassword = pwdInput.getAttribute('type') === 'password';
+        pwdInput.setAttribute('type', isPassword ? 'text' : 'password');
+        eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+  })();
+</script></main></body></html>

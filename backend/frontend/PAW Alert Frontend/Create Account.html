@@ -1,0 +1,370 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><title>Sign Up</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "background": "#f8f9ff", "on-background": "#131c28", "outline-variant": "#c4c5d9", "tertiary-fixed": "#ffdad6", "surface-white": "#FFFFFF", "canvas-background": "#EAF0FB", "primary-pressed": "#2A45D8", "primary-light": "#EEF2FF", "secondary-container": "#b4c5fd", "inverse-surface": "#28313d", "on-tertiary-container": "#fff1ef", "outline": "#747687", "surface-bright": "#f8f9ff", "on-secondary": "#ffffff", "primary-fixed-dim": "#bac3ff", "surface-container-lowest": "#ffffff", "surface-variant": "#dae3f4", "surface-dim": "#d2daeb", "on-error": "#ffffff", "inverse-on-surface": "#eaf1ff", "surface": "#f8f9ff", "on-surface-variant": "#444656", "icon-muted": "#C7D4EC", "on-tertiary-fixed": "#410002", "tertiary": "#b20112", "surface-container-low": "#eff4ff", "surface-container-highest": "#dae3f4", "text-primary": "#101828", "secondary-fixed": "#dbe1ff", "on-secondary-fixed": "#031847", "tertiary-container": "#d62828", "on-error-container": "#93000a", "error": "#ba1a1a", "primary-fixed": "#dee0ff", "secondary-fixed-dim": "#b4c5fd", "on-surface": "#131c28", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#344575", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#ffb4ab", "on-secondary-container": "#405182", "surface-container-high": "#e0e9f9", "on-primary-container": "#f3f2ff", "on-tertiary-fixed-variant": "#93000d", "on-primary-fixed-variant": "#002ecb", "on-tertiary": "#ffffff", "secondary": "#4c5d8e", "border-subtle": "#D8E1F2", "primary": "#183fe6", "on-primary": "#ffffff", "surface-tint": "#2648ee", "inverse-primary": "#bac3ff", "primary-container": "#3d5cff", "on-primary-fixed": "#000f5c" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-md": "1rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "margin": "1.5rem" }, fontFamily: { "headline-xl": ["Plus Jakarta Sans"], "button-label": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "body-md-bold": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "button-label": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-md-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    /* Staggered entrance cascade animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes subtlePulse {
+      0%, 100% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-4px) scale(1.03);
+      }
+    }
+    @keyframes ambientFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-6px) rotate(3deg);
+      }
+    }
+    @keyframes ambientFloatReverse {
+      0%, 100% {
+        transform: translateY(0) rotate(-12deg);
+      }
+      50% {
+        transform: translateY(6px) rotate(-8deg);
+      }
+    }
+    @keyframes shimmerSweep {
+      0% {
+        transform: translateX(-100%) skewX(-20deg);
+      }
+      50%, 100% {
+        transform: translateX(200%) skewX(-20deg);
+      }
+    }
+    @keyframes checkPop {
+      0% {
+        transform: scale(0.85);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.05s; }
+    .delay-2 { animation-delay: 0.12s; }
+    .delay-3 { animation-delay: 0.18s; }
+    .delay-4 { animation-delay: 0.24s; }
+    .delay-5 { animation-delay: 0.30s; }
+    .delay-6 { animation-delay: 0.36s; }
+    .delay-7 { animation-delay: 0.42s; }
+    .delay-8 { animation-delay: 0.48s; }
+    .delay-9 { animation-delay: 0.54s; }
+    .delay-10 { animation-delay: 0.60s; }
+
+    .ambient-paw-1 {
+      animation: ambientFloat 6s ease-in-out infinite;
+    }
+    .ambient-paw-2 {
+      animation: ambientFloatReverse 7s ease-in-out infinite;
+    }
+    .badge-pulse {
+      animation: subtlePulse 4s ease-in-out infinite;
+    }
+
+    /* Input focus glow */
+    .input-wrapper {
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .input-wrapper:focus-within {
+      box-shadow: 0 0 0 4px rgba(61, 92, 255, 0.15), 0 8px 24px -2px rgba(61, 92, 255, 0.12);
+      transform: translateY(-1px);
+    }
+    .input-wrapper:focus-within .input-prefix-icon {
+      color: #3d5cff !important;
+      transform: scale(1.08);
+    }
+    .input-prefix-icon {
+      transition: color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Button shimmer effect */
+    .shimmer-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+      animation: shimmerSweep 3.6s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    /* Checkbox bounce */
+    #termsCheckbox:checked + .custom-checkbox {
+      animation: checkPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    /* The check icon is nested inside the visual box, so target it from the
+       checkbox's checked state rather than relying on a sibling utility. */
+    #termsCheckbox:checked + .custom-checkbox svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Ripple effect container */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: rippleAnim 0.6s linear;
+      background-color: rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+    }
+    @keyframes rippleAnim {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .animate-fade-in-up {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .shimmer-layer {
+        display: none !important;
+      }
+    }
+  </style>
+</head><body class="bg-canvas-background text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-light selection:text-primary"><header class="fixed top-0 w-full z-50 bg-canvas-background/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)] animate-fade-in-up"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="group min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-surface-white flex items-center justify-center text-text-primary shadow-[0_2px_8px_rgba(11,31,78,0.06)] hover:shadow-[0_4px_12px_rgba(11,31,78,0.1)] active:scale-95 transition-all duration-200" onclick="history.back()"><span class="material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:-translate-x-1">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-text-primary truncate max-w-[200px]">Sign Up</h1></div><div class="flex items-center gap-space-xs"><img alt="PawAlert Logo" class="w-8 h-8 rounded-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UD9DP5tIE-Gv9MgEpBVpm-Coi65vaumzRWpozgmE-X7waw3gnygstFwxRhvWaGoMWx-ZhDwIozeV2f5H5L21qTx0ZqG0PN0ePLOITB7RWcLJdWKm7LfIihSv-nUE0mr2pKisHmIzTBrtTCZeM57zCxeymdtu3zYtSk9PhYAMENT3RCSx9KsS2v4xYQNVbOkILSYxg3-6m2aUaT5jsiu09W_14MtTVsimblwrNgT_naXWAHI5LHpZF_alYj" style="mix-blend-mode: multiply;"></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-canvas-background"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Subtle Ambient Paw Background Decors -->
+<div class="relative w-full max-w-[440px] mx-auto flex flex-col pt-space-sm">
+<!-- Decorative Watermark Paw Prints in background -->
+<div class="ambient-paw-1 absolute -top-3 -right-3 pointer-events-none text-icon-muted opacity-40 select-none">
+<span class="material-symbols-outlined text-[72px]" style="font-variation-settings: &quot;FILL&quot; 1;">pets</span>
+</div>
+<div class="ambient-paw-2 absolute top-48 -left-6 pointer-events-none text-icon-muted opacity-25 select-none -rotate-12">
+<span class="material-symbols-outlined text-[54px]" style="font-variation-settings: &quot;FILL&quot; 1;">pets</span>
+</div>
+<!-- Header Section -->
+<div class="flex flex-col items-center text-center mt-space-xs mb-space-lg relative z-10 animate-fade-in-up delay-1">
+<div class="flex items-center justify-center gap-space-xs mb-space-xs">
+<div class="badge-pulse w-10 h-10 rounded-full bg-primary-light flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: &quot;FILL&quot; 1;">pets</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-text-primary tracking-tight">
+          Create Account
+        </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[260px] leading-relaxed">
+        Join PawAlert community and make a difference.
+      </p>
+</div>
+<!-- Form Section -->
+<form class="flex flex-col gap-space-md relative z-10" id="createAccountForm" onsubmit="event.preventDefault();">
+<!-- Field 1: Full Name -->
+<div class="flex flex-col gap-1.5 animate-fade-in-up delay-2">
+<label class="font-body-md-bold text-body-md-bold text-text-primary px-space-xs" for="fullName">
+          Full Name
+        </label>
+<div class="input-wrapper relative flex items-center bg-surface-white rounded-full shadow-[0_4px_16px_-2px_rgba(11,31,78,0.04)]">
+<span class="input-prefix-icon material-symbols-outlined absolute left-4 text-secondary text-[20px] pointer-events-none">
+            person
+          </span>
+<input autocomplete="name" class="w-full h-[52px] pl-12 pr-4 bg-transparent text-text-primary placeholder:text-outline font-body-md text-body-md rounded-full outline-none" id="fullName" name="fullName" placeholder="Enter your full name" required="" type="text">
+</div>
+</div>
+<!-- Field 2: Mobile Number -->
+<div class="flex flex-col gap-1.5 animate-fade-in-up delay-3">
+<label class="font-body-md-bold text-body-md-bold text-text-primary px-space-xs" for="mobileNumber">
+          Mobile Number
+        </label>
+<div class="input-wrapper relative flex items-center bg-surface-white rounded-full shadow-[0_4px_16px_-2px_rgba(11,31,78,0.04)]">
+<span class="input-prefix-icon material-symbols-outlined absolute left-4 text-secondary text-[20px] pointer-events-none">
+            call
+          </span>
+<input autocomplete="tel" class="w-full h-[52px] pl-12 pr-4 bg-transparent text-text-primary placeholder:text-outline font-body-md text-body-md rounded-full outline-none" id="mobileNumber" name="mobileNumber" placeholder="Enter mobile number" required="" type="tel">
+</div>
+</div>
+<!-- Field 3: Email (optional) -->
+<div class="flex flex-col gap-1.5 animate-fade-in-up delay-4">
+<div class="flex items-center justify-between px-space-xs">
+<label class="font-body-md-bold text-body-md-bold text-text-primary" for="email">
+            Email <span class="font-body-md text-body-md text-on-surface-variant">(optional)</span>
+</label>
+</div>
+<div class="input-wrapper relative flex items-center bg-surface-white rounded-full shadow-[0_4px_16px_-2px_rgba(11,31,78,0.04)]">
+<span class="input-prefix-icon material-symbols-outlined absolute left-4 text-secondary text-[20px] pointer-events-none">
+            mail
+          </span>
+<input autocomplete="email" class="w-full h-[52px] pl-12 pr-4 bg-transparent text-text-primary placeholder:text-outline font-body-md text-body-md rounded-full outline-none" id="email" name="email" placeholder="Enter email address" type="email">
+</div>
+</div>
+<!-- Field 4: Password -->
+<div class="flex flex-col gap-1.5 animate-fade-in-up delay-5">
+<label class="font-body-md-bold text-body-md-bold text-text-primary px-space-xs" for="password">
+          Password
+        </label>
+<div class="input-wrapper relative flex items-center bg-surface-white rounded-full shadow-[0_4px_16px_-2px_rgba(11,31,78,0.04)]">
+<span class="input-prefix-icon material-symbols-outlined absolute left-4 text-secondary text-[20px] pointer-events-none">
+            lock
+          </span>
+<input autocomplete="new-password" class="w-full h-[52px] pl-12 pr-12 bg-transparent text-text-primary placeholder:text-outline font-body-md text-body-md rounded-full outline-none" id="password" name="password" placeholder="Create password" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-3.5 w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary-container active:scale-90 transition-all duration-150 cursor-pointer" onclick="togglePasswordVisibility('password', 'passwordToggleIcon')" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200" id="passwordToggleIcon">
+              visibility
+            </span>
+</button>
+</div>
+</div>
+<!-- Field 5: Confirm Password -->
+<div class="flex flex-col gap-1.5 animate-fade-in-up delay-6">
+<label class="font-body-md-bold text-body-md-bold text-text-primary px-space-xs" for="confirmPassword">
+          Confirm Password
+        </label>
+<div class="input-wrapper relative flex items-center bg-surface-white rounded-full shadow-[0_4px_16px_-2px_rgba(11,31,78,0.04)]">
+<span class="input-prefix-icon material-symbols-outlined absolute left-4 text-secondary text-[20px] pointer-events-none">
+            lock
+          </span>
+<input autocomplete="new-password" class="w-full h-[52px] pl-12 pr-12 bg-transparent text-text-primary placeholder:text-outline font-body-md text-body-md rounded-full outline-none" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required="" type="password">
+<button aria-label="Toggle confirm password visibility" class="absolute right-3.5 w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary-container active:scale-90 transition-all duration-150 cursor-pointer" onclick="togglePasswordVisibility('confirmPassword', 'confirmPasswordToggleIcon')" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200" id="confirmPasswordToggleIcon">
+              visibility
+            </span>
+</button>
+</div>
+</div>
+<!-- Terms and Conditions Checkbox -->
+<label class="flex items-start gap-space-sm pt-space-xs px-1 select-none cursor-pointer group animate-fade-in-up delay-7" for="termsCheckbox"><div class="relative flex items-center justify-center mt-0.5"><input checked="" class="peer sr-only" id="termsCheckbox" type="checkbox"><div class="custom-checkbox w-5 h-5 rounded-[6px] bg-surface-container-high peer-checked:bg-primary-container flex items-center justify-center transition-all duration-200 shadow-sm group-hover:shadow-[0_0_0_3px_rgba(61,92,255,0.12)]"><svg class="w-3.5 h-3.5 text-surface-white opacity-0 peer-checked:opacity-100 transition-all duration-200 scale-75 peer-checked:scale-100 origin-center" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="stroke-dasharray: 24; stroke-dashoffset: 0; transform-origin: center center;" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"></path></svg></div></div><span class="font-body-sm text-body-sm text-text-primary leading-tight">I agree to the <a class="text-primary-container font-body-md-bold hover:underline transition-colors" href="#" onclick="event.stopPropagation()">Terms &amp; Conditions</a> and <a class="text-primary-container font-body-md-bold hover:underline transition-colors" href="#" onclick="event.stopPropagation()">Privacy Policy</a></span></label>
+<!-- Primary Submit Button -->
+<button class="relative overflow-hidden w-full h-[54px] mt-space-sm rounded-full bg-primary-container hover:bg-primary-pressed hover:-translate-y-0.5 text-surface-white font-button-label text-button-label flex items-center justify-center shadow-[0_8px_24px_-4px_rgba(61,92,255,0.32)] hover:shadow-[0_12px_28px_-4px_rgba(61,92,255,0.42)] active:scale-[0.98] active:translate-y-0 active:shadow-[0_2px_8px_rgba(61,92,255,0.20)] transition-all duration-200 animate-fade-in-up delay-8" id="submitBtn" type="submit">
+<span class="shimmer-layer"></span>
+<span class="relative z-10 flex items-center gap-2">Create Account</span>
+</button>
+<!-- Rescue Community Trust Badge -->
+<div class="flex items-center justify-center gap-space-xs py-1 text-on-surface-variant animate-fade-in-up delay-9">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">
+          verified_user
+        </span>
+<span class="font-caption text-caption">256-bit encrypted data for community safety</span>
+</div>
+</form>
+<!-- Footer: Sign In Link -->
+<div class="mt-space-lg text-center animate-fade-in-up delay-10">
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Already have an account? 
+        <a class="text-primary-container font-body-md-bold text-body-md-bold hover:underline ml-1 transition-colors" href="sign in.html">
+          Sign In
+        </a>
+</p>
+</div>
+<!-- Friendly Paw Footnote Decor -->
+<div class="flex items-center justify-center gap-2 mt-space-md opacity-30 text-icon-muted select-none animate-fade-in-up delay-10">
+<span class="material-symbols-outlined text-[18px]">pets</span>
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+<span class="material-symbols-outlined text-[18px]">pets</span>
+</div>
+</div>
+</div>
+<script>
+  // Show or hide a password field and update its visibility icon.
+  function togglePasswordVisibility(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+    if (!input || !icon) return;
+
+    icon.style.transform = 'scale(0.7)';
+    // Finish the icon transition after changing the input type.
+    setTimeout(() => {
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+      icon.style.transform = 'scale(1)';
+    }, 100);
+  }
+
+  // Ripple effect on button click
+  const submitBtn = document.getElementById('submitBtn');
+  if (submitBtn) {
+    // Create a short-lived ripple at the pointer location.
+    submitBtn.addEventListener('click', function (e) {
+      const rect = submitBtn.getBoundingClientRect();
+      const circle = document.createElement('span');
+      const diameter = Math.max(rect.width, rect.height);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${e.clientX - rect.left - radius}px`;
+      circle.style.top = `${e.clientY - rect.top - radius}px`;
+      circle.classList.add('ripple');
+
+      const existingRipple = submitBtn.querySelector('.ripple');
+      if (existingRipple) {
+        existingRipple.remove();
+      }
+
+      submitBtn.appendChild(circle);
+    });
+  }
+
+  const form = document.getElementById('createAccountForm');
+  if (form) {
+    // Validate the account form and show a brief account-creation state.
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const pass = document.getElementById('password')?.value;
+      const confirmPass = document.getElementById('confirmPassword')?.value;
+      const terms = document.getElementById('termsCheckbox')?.checked;
+
+      if (!terms) {
+        alert('Please accept the Terms & Conditions and Privacy Policy to continue.');
+        return;
+      }
+
+      if (pass && confirmPass && pass !== confirmPass) {
+        alert('Passwords do not match. Please verify and try again.');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="relative z-10 flex items-center gap-2">
+            <span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span>
+            <span>Creating Account...</span>
+          </span>
+        `;
+      }
+
+      // Redirect to sign-in after the creation animation finishes.
+      // Navigate to the sign-in page after the submit feedback ends.
+      setTimeout(() => {
+        window.location.href = 'sign in.html';
+      }, 700);
+    });
+  }
+</script></main>
+
+
+</body></html>
